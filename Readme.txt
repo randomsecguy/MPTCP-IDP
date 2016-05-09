@@ -23,7 +23,7 @@ TEXTTABLE https://pypi.python.org/pypi/texttable
 PYDOT https://code.google.com/p/pydot/
 
 Planned updates:
--Ability to use a text file as the signature database
--Integration into a proxy to extend benefits to all hosts
+-Add ability to use a text file as the signature database
+-Integrate into a proxy to extend benefits to all hosts
 -Update the prevention methodology from TCP RST to MPTCP specific signaling
 -Other general improvements and refinements
