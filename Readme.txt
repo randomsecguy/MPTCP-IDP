@@ -1,8 +1,8 @@
 Description:
 
 The proof-of-concept tool utlizes MPTCP adapted connection tracking to perform accurate intrusion detection and prevention.
-All MPTCP packets are logged into a dictionary and correlations are being analyzed for every new packet. MPTCP subflows are
-linked to their respective connections. For every data packet, the subflow data is extracted and ordered to recreate the 
+All MPTCP packets are logged into a dictionary and correlations are analyzed for every new packet. MPTCP subflows are
+linked to their respective connections. For every data packet, the subflow data is extracted and reordered to recreate the 
 original data stream which is fed into a signature matcher. 
 
 First, the IDPS needs to be runnning in order to grab MPTCP packets and perform processing accordingly. The list of signatures 
