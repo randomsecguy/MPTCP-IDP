@@ -1,6 +1,7 @@
 Description:
 
-The proof-of-concept tool utlizes MPTCP adapted connection tracking to perform accurate intrusion detection and prevention. First, the IDPS needs to be runnning in order to grab MPTCP packets and perform processing accordingly. The list of signatures is currently embedded inside the code. 
+The proof-of-concept tool utlizes MPTCP adapted connection tracking to perform accurate intrusion detection and prevention.
+First, the IDPS needs to be runnning in order to grab MPTCP packets and perform processing accordingly. The list of signatures is currently embedded inside the code. 
 
 Note: The sha1.py file is forked from the code released at https://github.com/Neohapsis/mptcp-abuse
 
