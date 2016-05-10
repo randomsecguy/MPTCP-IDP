@@ -7,9 +7,9 @@ The repo consists of a basic proxy where the security part is integrated.
 
 Working:
 
- +------+           +-----+            +----------+        
- |Client| <=MPTCP=> |Proxy| <=MPTCP=>  |TCP Server|
- +------+           +-----+            +----------+       
+ +------+           +-----+         +----------+        
+ |Client| <=MPTCP=> |Proxy| <=TCP=> |TCP Server|
+ +------+           +-----+         +----------+       
 
 
 The above figure explains the assumed setup. All the traffic from the MPTCP client and the TCP server needs to traverse through the proxy. When the proxy starts, it sets up NAT rules to be able to transparently communicate with the client on behalf of the TCP server and with the server on behalf of the client. The traffic between the client and the server is tracked and possible intrusions are deteced by the IDPS script which in turn utilizes the analyzer script to perform its functionality.
