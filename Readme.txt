@@ -11,6 +11,7 @@ Working:
  |Client| <=MPTCP=> |Proxy| <=MPTCP=>  |TCP Server|
  +------+           +-----+            +----------+       
 
+
 The above figure explains the assumed setup. All the traffic from the MPTCP client and the TCP server needs to traverse through the proxy. When the proxy starts, it sets up NAT rules to be able to transparently communicate with the client on behalf of the TCP server and with the server on behalf of the client. The traffic between the client and server is tracked and possible intrusions are deteced by the IDPS script which in turn utlized the analyzer script to perform its functionality.
 
 Usage:
@@ -18,10 +19,6 @@ Usage:
 Run proxy by providing it with four arguments as follows:
   sudo python proxy.py proxy_ip proxy_port server_ip server_port 
 e.g sudo python proxy.py 172.16.208.130 80 172.16.208.131 80
-
-
-
-
 
 
 
