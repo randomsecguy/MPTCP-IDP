@@ -30,7 +30,6 @@ Pcapy https://github.com/CoreSecurity/pcapy
 DPKT https://github.com/kbandla/dpkt
 SCAPY http://www.secdev.org/projects/scapy/
 TEXTTABLE https://pypi.python.org/pypi/texttable
-PYDOT https://code.google.com/p/pydot/
 
 Planned updates:
 -Add ability to use a text file as the signature database
