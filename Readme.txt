@@ -11,7 +11,7 @@ Working:
  |Client| <=MPTCP=> |Proxy| <=MPTCP=>  |TCP Server|
  +------+           +-----+            +----------+       
 
-The above figure explains the assumed setup. All the traffic from the MPTCP client and the TCP server needs to traverse through the proxy. When the proxy starts, it sets up NAT rules to be able to transparently communicate with the client on the behalf of the TCP server and with the server on behalf of the client. 
+The above figure explains the assumed setup. All the traffic from the MPTCP client and the TCP server needs to traverse through the proxy. When the proxy starts, it sets up NAT rules to be able to transparently communicate with the client on behalf of the TCP server and with the server on behalf of the client. 
 
 Usage:
 
