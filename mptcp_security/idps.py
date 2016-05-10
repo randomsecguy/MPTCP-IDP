@@ -20,6 +20,7 @@ interface = 'eth0'
 signatures = ['ATdIS', 'mJhFMJoBwM', 'UprUtkegWIDPswW', 'skuDtDCGhEXmoEkeAzLd', 'NztqitwGgiAnoEApjHBjSzYcI','gtZRqbUCmBsTqaAtGRDNXvJvCIqQWZ', 'zJSHIgpWldAbjbspfKdAPZHYDXKFsRuvwWL', 'eQbRbjYtQlJYmuZtSjXySdvxxaAZzDuMAxQrfVWS', 'ZpNhPisNBnaArNGrlvKdcsmjjUWDgxDexJZTjjYtQJrhr', 'QtcPEIDHoDRPndsQMqzXEEedaOjbufjdpVLwDcSCszNegEZRpm']
 data_times = []
 detection_times = []
+detected_sigs=[]
 
 packet= 0
 
@@ -56,6 +57,7 @@ def signature_matcher(payload):
     
     diff = (tii - maxx) * 1000000
     print "SIGNATURE (", signature, ") DETECTED in", '%.6f' % diff, "(micro s)"
+    detected_sigs.append(signature)
     #del d
     #exit(0)
     #time.sleep(5) 
@@ -74,9 +76,14 @@ def rcv_pkts(header, pkt):
 
  #try:
  start  = time.time()
- payload = packet_parser(packet, pkt, start)  
- #finish()
-  
+ payload = packet_parser(packet, pkt, start)
+ try:
+  if sys.argv[1] is "v":
+   finish()
+  else:
+   pass
+ except:
+  pass 
  #payload = data_mapper()
  end = time.time()
    
@@ -108,17 +115,23 @@ def passive_capture():
   while True:
   #total_packets = cap.loop(-1, rcv_pkts)
   
-   total_packets = cap.dispatch(-1, rcv_pkts)       #Dispatch is more responsive to Keyboard interrupts
+   total_packets = cap.dispatch(-1, rcv_pkts) #Dispatch is more responsive to Keyboard interrupts
   
  except KeyboardInterrupt:
   print "*******************************SUMMARY**********************"
-  
-  print "Detected ", len(detection_times), "signatures"
+ 
+
+  #for zz in detected_sigs:
+   #print "Detected signature:", zz 
+
+
+  print "Detected ", len(detection_times), "signatures"  
   print "Detection times", detection_times
   summ= 0
   for i in detection_times:
    summ = summ + i
   print "Average Detection time:", summ / int(len(detection_times))
+  time.sleep(5)
   #cap.breakloop()
   #createchart()
  # print "All over"
